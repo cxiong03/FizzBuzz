@@ -1,21 +1,32 @@
 package com.codewithchang;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Number: ");
-        int number = scanner.nextInt();
-
-        if(number % 5 == 0 && number % 3 == 0)
-        System.out.print("FizzBuzz");
-        else if(number % 5 == 0)
-            System.out.print("Fizz");
-        else if(number % 3 == 0)
-            System.out.print("Buzz");
-        else
-            System.out.println(number);
+        public List<String> fizzBuzz(int n) {
+            List<String> output_arr = new ArrayList<>();
+            for (int i =1, fizz = 0, buzz = 0; i <+ n; i++) {
+                fizz++;
+                buzz++;
+            }
+            if (fizz == 3 && buzz == 5) {
+                fizz = 0;
+                buzz = 0;
+                output_arr.add("FizzBuzz");
+            } else if (fizz == 3) {
+                fizz = 0;
+                output_arr.add("Fizz");
+            } else if (buzz == 5) {
+                buzz = 0;
+                output_arr.add("Buzz");
+            } else {
+                output_arr.add(Integer.toString(i));
+            }
+        }
+        return output_arr;
     }
 }
